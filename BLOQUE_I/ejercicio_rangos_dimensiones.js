@@ -7,6 +7,3 @@ var comprobation = ((a < c) && (b < c)) && (c > b);
 console.log(comprobation);
 
 
-var nombre_funcion = function(){
-    
-}
