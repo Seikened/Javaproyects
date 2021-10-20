@@ -24,3 +24,10 @@ var nombreObjeto = objeto.nombre;
 var textoCalle = objeto.direction.calle;
 
 console.log(nombreObjeto,textoCalle,item4)
+
+var longitud = array.length;
+console.log(longitud);
+
+var isValidPosition = 50  >= 0 &&  50 < array.length; //Verificame que  el indice 50 este dentro de cero (el indice inicial), y que 50 sea menor que la longitud total de el array
+
+console.log(isValidPosition)
