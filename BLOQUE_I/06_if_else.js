@@ -1,34 +1,36 @@
-// create a telegram bot with this token '2001341521:AAF9OlA1_ZykxIR_JgX__T6zy2G18CieFj8'
+// control de flujo
 
 
-// create a bot
-const TelegramBot = require('node-telegram-bot-api');
-const token = '2001341521:AAF9OlA1_ZykxIR_JgX__T6zy2G18CieFj8';
-const bot = new TelegramBot(token, {polling: true});
+// condicionales
+var condicion = true;
+var condicion2 = true;
+if (condicion && condicion2) {
+    //hago estos
+    console.log("Estoy en el if");
+} else {
+    //hago esto otro si no se cumple
+    console.log("Estoy en el else");
+}
+// continuo ejecutanndo el codigo
 
 
-// create a function to send a message to the user
-function sendMessage(chatId, message) {
-    bot.sendMessage(chatId, message);
+// Se puede encadenar
+if (condicion1) {
+    //entro aqui si se cumple la primera
+} else if (condicion2) {
+    //hago esto otro si no se cumple la primera
+} else if (condicion3) {
+    //hago esto otro si no se cumplen las anteriores
+} else {
+    //todos fueron casos no cumplidos
 }
 
-
-// create a function to send a message to the user
-function sendMessageWithKeyboard(chatId, message, keyboard) {
-    bot.sendMessage(chatId, message, {
-        reply_markup: {
-            keyboard: keyboard,
-            resize_keyboard: true
-        }
-    });
+//se puede anidar
+if (condicion1) {
+    if (condicion2) {
+        //hago esto
+    }
+} else {
+        //hago esto 
 }
 
-
-// create a function to send a message to the user
-function sendMessageWithInlineKeyboard(chatId, message, inlineKeyboard) {
-    bot.sendMessage(chatId, message, {
-        reply_markup: {
-            inline_keyboard: inlineKeyboard
-        }
-    });
-}
