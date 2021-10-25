@@ -14,9 +14,9 @@ a++;
 a+=2;
 
 
-var greets = 'Buenos días ';
+var greets = 4;
 var nombre = 'Fernando Leon Franco';
-var suma_combinada = greets + nombre;
+var suma_combinada = greets * nombre;
 
 console.log(suma_combinada);
 
