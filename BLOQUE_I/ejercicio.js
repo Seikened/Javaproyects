@@ -22,3 +22,5 @@ if (13 % 2 == 0){
 } else {
     console.log(una + " es impar de " + dos);
 }
+
+//test ii
