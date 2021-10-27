@@ -11,5 +11,3 @@ proceso1();
 // Repetidamente
 proceso1();
 
-//Va
-//Listo cierro
