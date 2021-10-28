@@ -96,4 +96,24 @@ saludarSuperEducadamente(logicaSaludar,"Fernando Leon");
  asigna el valor y lo imprime en conjunto*/ 
 
 
+/* 
+Esto es lo que da pie a hacer programación funcional en JS
+Las funciones son objetos y por lo tanto se pueden comportar como tal
+
+Se usan mucho en la gestión de eventos:
+*/
+
+function processClickEvent(event) {
+    //Hago algo cuando recibo el click
+}
+
+
+//Quiero que cuando s ehaga click en el item, se ejecute mi función
+var itemEnPantalla; //Algun item en pantalla
+/* La libreria de frontend me proporciona una forma de ejecutar mi función cuando se haga click.
+Lo que estoy haciendo es pasarle la función a ejecutar como parametro
+*/
+itemEnPantalla.Onclick(processClickEvent);
+
+
  //▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
