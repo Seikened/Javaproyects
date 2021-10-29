@@ -23,14 +23,15 @@ function addTask(taskList, taskDescription){
 function printTaskList(taskList){
     // [] Comprar pan
     // [x] Comprar leche
-    for (tarea of taskList){
+    for (let i=0; i<taskList.length;i++){
+        let tarea =taskList[i]
         if (tarea.done){
             //Tarea realizada
-            console.log("[x] "+tarea.description);
+            console.log((i+1)+ ".- [x] "+tarea.description);
         }
         else{
             //Tarea realizada
-            console.log("[ ] "+tarea.description);
+            console.log((i+1)+ ".- [ ] "+tarea.description);
         }
     }
 }
@@ -62,6 +63,7 @@ function mode1(taskList){
 }
 
 
+// Sefundo modo: marcar tareas completadas
 function markTask(taskList, index){
     if (index >= 0 && index < taskList.length){
     taskList[index].done = true;
@@ -69,6 +71,15 @@ function markTask(taskList, index){
         console.log("Tarea no encontrada");
     }
 }
+
+function checkAllDone(taskList){
+    for (let task of taskList)
+        if (!task.done)
+            return false;
+        return true;
+        
+}
+
 
 function mode2(taskList){
     printTaskList(taskList);
@@ -84,7 +95,14 @@ function mode2(taskList){
             
             default:{
                markTask(taskList, taskNumber - 1);
-               mode2(taskList);
+               //Comprobar si las tareas estan hechas y cerrar el programa
+               if(checkAllDone(taskList)){
+                    console.log("Todas las tareas estan hechas, felicidades");
+                    rl.close();
+               }
+               else{
+                    mode2(taskList);
+               }
             }
         }
     });
@@ -99,6 +117,5 @@ mode1(taskList);
 
 
 
-// Sefundo modo: marcar tareas completadas
 
 
