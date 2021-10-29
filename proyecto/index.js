@@ -38,23 +38,63 @@ function printTaskList(taskList){
 
 //Primer modo: lextura de tareas necesarias
 
-function ask_for_tasks(taskList){
+function mode1(taskList){
     rl.question("Introduce una nueva tarea (fin si terminas) ", function(taskDesc){
-        if(taskDesc == "fin"){
-            console.log("Ya no se introducen mas tareas...");
-            rl.close();
-        }
-        else{
-            addTask(taskList, taskDesc);
-            console.log("Tarea añadida, la lista de tareas actual es: ");
-            printTaskList(taskList);
-            ask_for_tasks(taskList);
+
+        switch(taskDesc){
+            case "fin":{
+                console.log("Ya no se introducen mas tareas...");
+                mode2(taskList);
+                break;
+            }
+            case "exit":{
+                rl.close();
+                break;
+            }
+            default:{
+                addTask(taskList, taskDesc);
+                console.log("Tarea añadida, la lista de tareas actual es: ");
+                printTaskList(taskList);
+                mode1(taskList);
+            }
         }
     });
 }
 
 
-ask_for_tasks(taskList);
+function markTask(taskList, index){
+    if (index >= 0 && index < taskList.length){
+    taskList[index].done = true;
+    } else {
+        console.log("Tarea no encontrada");
+    }
+}
+
+function mode2(taskList){
+    printTaskList(taskList);
+
+    rl.question("¿Que atrea has realizado?  (1-N) ", function(taskNumber){
+        
+        switch(taskNumber){
+            case "fin":
+            case "exit":
+                console.log("Bye bye");
+                rl.close();
+                break;
+            
+            default:{
+               markTask(taskList, taskNumber - 1);
+               mode2(taskList);
+            }
+        }
+    });
+
+}
+
+
+
+
+mode1(taskList);
 
 
 
